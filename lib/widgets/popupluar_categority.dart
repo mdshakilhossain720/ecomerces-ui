@@ -30,26 +30,31 @@ class PopularCategoryt extends StatelessWidget {
               ),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      
-                      child: Image.asset("assets/images/burger.png",height: 130,),
-                    ),
-                    Text("Hot Burger",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                    SizedBox(height: 4,),
-                    Text("Taste Out Hot Burger",style: TextStyle(fontSize: 15),),
-                    SizedBox(height: 12,),
-                    Row(
-                      children: [
-                        Text("\$12",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.red),),
-                        Spacer(),
-                        Icon(Icons.favorite,size: 26,color: Colors.red,),
-                        
-                      ],
-                    )
-                  ],
+                child: InkWell(
+                  onTap: (){
+                    Navigator.pushNamed(context, "ItemPage");
+                  },
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+
+                        child: Image.asset("assets/images/burger.png",height: 130,),
+                      ),
+                      Text("Hot Burger",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                      SizedBox(height: 4,),
+                      Text("Taste Out Hot Burger",style: TextStyle(fontSize: 15),),
+                      SizedBox(height: 12,),
+                      Row(
+                        children: [
+                          Text("\$12",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.red),),
+                          Spacer(),
+                          Icon(Icons.favorite,size: 26,color: Colors.red,),
+
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

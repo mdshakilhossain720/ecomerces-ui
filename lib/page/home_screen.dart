@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fooddesignui/page/cartpage.dart';
 
 import '../widgets/appbar_widgets.dart';
 import '../widgets/categority.dart';
@@ -26,7 +27,9 @@ class HomePage extends StatelessWidget {
                      blurRadius: 10,
                    )
                  ]),
-             child: FloatingActionButton(onPressed: (){},child: Icon(Icons.currency_bitcoin_outlined,size: 28,color: Colors.red,),)),
+             child: FloatingActionButton(onPressed: (){
+               Navigator.push(context, MaterialPageRoute(builder: (_)=>CartPage()));
+             },child: Icon(Icons.currency_bitcoin_outlined,size: 28,color: Colors.red,),)),
       body: ListView(
         children: [
           //CustomAppBar widgets
@@ -57,7 +60,7 @@ class HomePage extends StatelessWidget {
                   Icon(Icons.search,color: Colors.red,),
                   Container(
                     height: 49,
-                    width: 300,
+                    width: 250,
                     child: Padding(padding: EdgeInsets.symmetric(horizontal: 10),
                     child: TextFormField(
                       decoration: InputDecoration(
@@ -83,7 +86,7 @@ class HomePage extends StatelessWidget {
           child: Text("Categories",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),),
           Categority(),
           Padding(padding: EdgeInsets.only(top: 20,left: 10),
-            child: Text("Categories",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),),
+            child: Text("Popular",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),),
 
           //Popuplour categoruty
           PopularCategoryt(),
@@ -92,7 +95,7 @@ class HomePage extends StatelessWidget {
 
           //Newest items
 
-          NewsestWidgets()
+          NewsestWidgets(),
 
 
 
